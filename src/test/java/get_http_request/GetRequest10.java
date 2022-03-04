@@ -35,6 +35,7 @@ public void test10(){
     rs.then().assertThat().statusCode(200);
     JsonPath json = rs.jsonPath();
 
+
 assertEquals("Airi Satou",json.getString("data.employee_name[4]"));
 assertEquals(372000,json.getInt("data.employee_salary[5]"));
 assertEquals(24,json.getList("data.employee_name").size());
