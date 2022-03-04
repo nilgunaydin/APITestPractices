@@ -4,14 +4,13 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Before;
 
-public class ReqresinBaseUrl {
+public class DummyBaseUrl {
+    public RequestSpecification spec02;
 
-  public  RequestSpecification spec01;
-
-@Before
+    @Before
     public void setup(){
 
-        spec01 = new RequestSpecBuilder().setBaseUri("https://reqres.in").build();
+        spec02 = new RequestSpecBuilder().setBaseUri("http://dummy.restapiexample.com").build();
 
     }
 }
