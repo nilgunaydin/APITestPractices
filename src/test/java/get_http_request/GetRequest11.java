@@ -7,8 +7,7 @@ import static io.restassured.RestAssured.given;
 
 public class GetRequest11 {
   String endPoint = "http://www.gmibank.com/api/tp-customers";
-  String bearerToken = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtdXJhdHRhbmMiLCJhdXRoIjoiUk9MRV9BRE1JTiIsImV4cCI6MTY0NjUwNTU1NH0.ySbwAfpdtEWsWMucCoyBB5ND9Cu1jyD5rwNLSqF6GQu0XfM0LwCg6PerxCkbJCVFJ7CslucH5VOWEenRK2HQ7w";
-
+  String bearerToken = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiYXRjaDQ0YXBpIiwiYXV0aCI6IlJPTEVfQ1VTVE9NRVIiLCJleHAiOjE2NDY2NDE3OTd9.KxnrBsxGavxEb8GeT_mOF17LRrTHh0syj_bJWFrJ6VTCWL4NhI4mxHXe91kJW-pgJP9gfXpWoHdLb2bDG1fS6Q";
   @Test
   public void test(){
 
