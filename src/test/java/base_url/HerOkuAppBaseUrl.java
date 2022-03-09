@@ -4,13 +4,12 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Before;
 
-public class GMIBankBaseUrl {
-    public RequestSpecification specGMI;
+public class HerOkuAppBaseUrl {
 
+    protected RequestSpecification spec05;
     @Before
     public void setup(){
-
-        specGMI = new RequestSpecBuilder().setBaseUri("http://www.gmibank.com/api").build();
-
+        spec05=new RequestSpecBuilder().setBaseUri("https://restful-booker.herokuapp.com").build();
     }
+
 }
