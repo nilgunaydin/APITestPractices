@@ -10,7 +10,7 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
-public class Authentication extends GMIBankBaseUrl {
+public class Authentication {
 
     public static String generateToken(){
         String username = "Batch44Api";
