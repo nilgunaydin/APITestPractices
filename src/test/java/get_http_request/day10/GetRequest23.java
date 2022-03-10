@@ -5,9 +5,7 @@ import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
 import test_data.DummyTestData;
-
 import java.util.*;
-
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -63,10 +61,15 @@ assertEquals(expectedTestData.get("sondan3.CalisaninMaasi"),
 
        List<Integer> yas = (List)((Map) actual.get("data")).get("employee_age");
         System.out.println(yas);
-       // assertTrue(((List)((Map) actual.get("data")).get("employee_age")).
-         //       containsAll((List)expectedTestData.get("arananYaslar")));
+
+         assertTrue(((List)((Map) actual.get("data")).get("employee_age")).
+         containsAll((List)expectedTestData.get("arananYaslar")));
 
         */
+
+
+
+
         //40,21 ve 19 yaslarında çalışanlar olup olmadığını
 
         //1. Yol
@@ -75,12 +78,13 @@ assertEquals(expectedTestData.get("sondan3.CalisaninMaasi"),
         for(int i =0; i<24; i++){
             actualYasListesi.add(((Integer) ((Map)((List<?>) actual.get("data")).get(i)).get("employee_age")));
         }
-        Assert.assertTrue(actualYasListesi.containsAll((Collection<?>) expectedTestData.get("arananYaslar")));
+        assertTrue(actualYasListesi.containsAll((Collection<?>) expectedTestData.get("arananYaslar")));
 
         //2. Yol
         List<Integer> employee_age = new ArrayList<>();
         for(int i=0 ; i < ((List)actual.get("data")).size() ; i++){
             employee_age.add((Integer) ((Map)((List)actual.get("data")).get(i)).get("employee_age"));
+            Assert.assertTrue(actualYasListesi.containsAll((Collection<?>) expectedTestData.get("arananyaslar")));
 
 
         //10. Çalışan bilgilerinin bilgilerinin aşağıdaki gibi
