@@ -6,9 +6,7 @@ import org.junit.Test;
 import test_data.HerOkuAppTestData;
 
 import java.util.HashMap;
-
 import static io.restassured.RestAssured.given;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class GetRequest22 extends HerOkuAppBaseUrl {
@@ -55,8 +53,12 @@ HashMap<String, Object> actualData = rs.as(HashMap.class);
     //   assertEquals(expectedTestDataMap.get("lastname"),actualData.get("lastname"));
     //   assertEquals(expectedTestDataMap.get("totalprice"),actualData.get("totalprice"));
     //   assertEquals(expectedTestDataMap.get("depositpaid"),actualData.get("depositpaid"));
-    //   assertEquals(expectedTestDataMap.get("bookingdates"),actualData.get("bookingdates"));
+    //   assertEquals(((Map)expectedTestDataMap.get("bookingdates")).get("checkin"),((Map)actualData.get("bookingdates")).get("checkin"));
+    //   assertEquals(((Map)expectedTestDataMap.get("bookingdates")).get("checkout"),((Map)actualData.get("bookingdates")).get("checkout"));
+
+
     //   assertEquals(expectedTestDataMap,actualData);
+
         assertTrue(actualData.entrySet().containsAll(expectedTestDataMap.entrySet()));
 
         }
