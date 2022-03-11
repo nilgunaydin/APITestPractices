@@ -1,5 +1,7 @@
 package test_data;
 
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,4 +19,23 @@ public class JsonPlaceHolderTestData {
 
 return expected ;
     }
+
+
+    //    {
+    //    "userId": 55,
+    //    "title": "Tidy your room",
+    //    "completed": false
+    //  }
+
+public JSONObject data() {
+        JSONObject data = new JSONObject();
+        data.put("userId", 55);
+        data.put("title", "Tidy your room");
+        data.put("completed", false);
+        data.put("statusCode", 201);
+        data.put("id", 201);
+        return data;
+
+}
+
 }

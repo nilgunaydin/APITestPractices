@@ -84,6 +84,8 @@ assertEquals(expectedTestData.get("sondan3.CalisaninMaasi"),
         List<Integer> employee_age = new ArrayList<>();
         for(int i=0 ; i < ((List)actual.get("data")).size() ; i++){
             employee_age.add((Integer) ((Map)((List)actual.get("data")).get(i)).get("employee_age"));
+        }
+
             Assert.assertTrue(actualYasListesi.containsAll((Collection<?>) expectedTestData.get("arananyaslar")));
 
 
@@ -92,5 +94,5 @@ assertEquals(expectedTestData.get("sondan3.CalisaninMaasi"),
 
 
 
-    }
+
 }}

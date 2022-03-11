@@ -1,8 +1,11 @@
 package test_data;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class DummyTestData {
     /*
@@ -48,4 +51,25 @@ Sondan 3. çalışanın maaşının 675000 olduğunu
         expected.put("onuncu",onuncu);
 
     return expected;}
+
+public Map<String,Object> PostVeri(){
+         Map<String,Object> postVerisi = new HashMap();
+        postVerisi.put("name","Ali Can");
+        postVerisi.put("age","40");
+        postVerisi.put("salary","2000");
+
+return postVerisi;}
+
+
+
+public Map<String,Object> expected(){
+    Map<String,Object> data = new HashMap();
+        data.put("id","");
+
+ Map<String,Object> expectedData = new HashMap();
+ expectedData.put("status","success");
+ expectedData.put("statusCode",200);
+ expectedData.put("message","Successfully! Record has been added.");
+
+    return expectedData; }
 }
