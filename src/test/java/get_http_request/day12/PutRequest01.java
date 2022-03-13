@@ -7,6 +7,8 @@ import io.restassured.response.Response;
 import org.junit.Test;
 import test_data.JsonPlaceHolderTestData;
 
+import java.util.Map;
+
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertEquals;
@@ -43,7 +45,14 @@ assertEquals(obj.setUpPutData().get("id"),json.get("id"));
 assertEquals(obj.setUpPutData().get("title"),json.get("title"));
 assertEquals(obj.setUpPutData().get("userId"),json.get("userId"));
 
+//de-serialization
 
-
+    Map<String, Object> actual= rs.as(Map.class);//sadece body
+    System.out.println(actual);
+    assertEquals(obj.setUpPutData().get("completed"),actual.get("completed"));
+    assertEquals(obj.setUpPutData().get("id"),actual.get("id"));
+    assertEquals(obj.setUpPutData().get("title"),actual.get("title"));
+    assertEquals(obj.setUpPutData().get("userId"),actual.get("userId"));
+    //assertEquals(200,actual.get("statusCode"));
 }
 }

@@ -47,4 +47,24 @@ public JSONObject setUpPutData(){
         expectedRequest.put("id",198);
 return expectedRequest;}
 
+
+    public JSONObject setUpPatchData(){
+        JSONObject expectedRequest = new JSONObject();
+        expectedRequest.put("title", "Batch44");
+        return expectedRequest;}
+
+
+    public JSONObject setUpPatchExpectedData(){
+        JSONObject expectedRequest = new JSONObject();
+        expectedRequest.put("userId", 10);
+        expectedRequest.put("title", "Batch44");
+        expectedRequest.put("completed", true);
+        expectedRequest.put("id", 198);
+        return expectedRequest;}
+
+//"userId": 10,
+//"title": "Batch44"
+//"completed": true,
+//"id": 198
+
 }
