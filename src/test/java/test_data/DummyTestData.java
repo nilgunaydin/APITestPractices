@@ -72,4 +72,13 @@ public Map<String,Object> expected(){
  expectedData.put("message","Successfully! Record has been added.");
 
     return expectedData; }
+    public JSONObject setUpDeleteData(){
+        JSONObject expectedData = new JSONObject();
+        expectedData.put("status", "success");
+        expectedData.put("data", "2");
+        expectedData.put("message", "Successfully! Record has been deleted");
+        return expectedData;
+    }
+
+
 }
