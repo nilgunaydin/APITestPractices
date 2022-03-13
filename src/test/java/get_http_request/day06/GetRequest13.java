@@ -24,7 +24,7 @@ public class GetRequest13 extends Authentication {
    public void test13(){
        specGMI.pathParams("par1","tp-customers","par2","114351");
        Response rs = given().spec(specGMI).when().
-               header("Authorization","Bearer " + generateToken()).get("/{par1}/{par2}");
+               header("Authorization","Bearer " + generateToken()).get("/{par1}/{par2}").then().extract().response();
        rs.then().body("firstName",equalTo("Della"));
 
        JsonPath json = rs.jsonPath();

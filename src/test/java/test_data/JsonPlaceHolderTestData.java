@@ -38,4 +38,13 @@ public JSONObject data() {
 
 }
 
+public JSONObject setUpPutData(){
+
+        JSONObject expectedRequest = new JSONObject();
+        expectedRequest.put("userId", 21);
+        expectedRequest.put("title","Wash the dishes");
+        expectedRequest.put("completed",false);
+        expectedRequest.put("id",198);
+return expectedRequest;}
+
 }
