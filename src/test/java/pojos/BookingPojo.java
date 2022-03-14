@@ -15,6 +15,7 @@ public class BookingPojo {
           private boolean depositpaid;
           private BookingDatesPojo bookingdates;
 
+
     public BookingPojo() {
     }
 

@@ -9,14 +9,15 @@ import lombok.ToString;
 @Setter
 @ToString
 public class BookingResponsePojo {
-    private int bookingId;
-    private BookingPojo bookingPojo;
+    private int bookingid;
+    private BookingPojo booking;
+
 
     public BookingResponsePojo() {
     }
 
     public BookingResponsePojo(int bookingId, BookingPojo bookingPojo) {
-        this.bookingId = bookingId;
-        this.bookingPojo = bookingPojo;
+        this.bookingid = bookingId;
+        this.booking = bookingPojo;
     }
 }
