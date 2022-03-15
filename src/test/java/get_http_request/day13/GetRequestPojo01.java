@@ -22,7 +22,6 @@ GET Request to the URL http://dummy.restapiexample.com/api/v1/employee/1
    },
  "message": "Successfully! Record has been fetched."
  }
-
 */
 @Test
     public void test(){
