@@ -17,13 +17,13 @@ public class DummyDataPojo {
     private int id;
     private String employee_name;
     private int employee_salary;
-    private String employee_age;
+    private int employee_age;
     private String profile_image;
 
     public DummyDataPojo() {
     }
 
-    public DummyDataPojo(int id, String employee_name, int employee_salary, String employee_age, String profile_image) {
+    public DummyDataPojo(int id, String employee_name, int employee_salary, int employee_age, String profile_image) {
         this.id = id;
         this.employee_name = employee_name;
         this.employee_salary = employee_salary;
