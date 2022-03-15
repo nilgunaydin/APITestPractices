@@ -70,5 +70,6 @@ GET Request to the URL http://dummy.restapiexample.com/api/v1/employee/1
     // "profile_image":""},
     // "message":"Successfully! Record has been fetched."
 
+
 }
 }
