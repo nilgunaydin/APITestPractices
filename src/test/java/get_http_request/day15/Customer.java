@@ -2,6 +2,13 @@ package get_http_request.day15;
 
 import java.util.List;
 
+import lombok.*;
+
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class Customer {
     private int id;
     private String firstName;
@@ -19,5 +26,5 @@ private String zelleEnrolled;
 private Country country;
     private String state;
     private User user;
-  private List account;
+  private List accounts;
 }
