@@ -7,7 +7,7 @@ import lombok.*;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class countryOfCustomer {
+public class Country {
     private int id;
     private String name;
     private String states;
