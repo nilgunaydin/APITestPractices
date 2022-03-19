@@ -18,4 +18,29 @@ public class WriteToText {
         } catch (Exception e) {
         }
     }
+
+    public static void saveEmailData(String fileName, Customer[] customers) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
+
+            for (int i = 0; i < customers.length; i++) {
+                writer.append(customers[i].getEmail() + ",\n");
+            }
+            writer.close();
+        } catch (Exception e) {
+        }
+    }
+    public static void saveFirstNameData(String fileName, Customer[] customers) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
+
+            for (int i = 0; i < customers.length; i++) {
+                writer.append(customers[i].getFirstName() + ",\n");
+            }
+            writer.close();
+        } catch (Exception e) {
+        }
+    }
+
+
 }

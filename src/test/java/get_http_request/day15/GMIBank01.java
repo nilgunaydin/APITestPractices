@@ -5,10 +5,16 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.junit.Assert;
 import org.junit.Test;
+import utilities.ReadText;
 import utilities.WriteToText;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static io.restassured.RestAssured.given;
+import static java.util.Arrays.asList;
 import static utilities.Authentication.generateToken;
 
 public class GMIBank01 extends GMIBankBaseUrl {
@@ -56,8 +62,10 @@ String fileName= "src/test/java/get_http_request/day15/GMIBankTextData/SNNList.t
 
         /** 4) Olusturduğunuz text dosyasından  SSNleri okuyarak
          "531-95-8437", "049-43-2360", "123-34-3434" SSNlerinin olduğunu doğrulayın */
+        List<String> expected = new ArrayList(asList("531-95-8437", "049-43-2360", "123-34-3434"));
 
+        List<String> actual = ReadText.readCustomerSSNList(fileName);
 
-
+        Assert.assertTrue("eslesmeyen SSNler",actual.containsAll(expected));
          }
 }
