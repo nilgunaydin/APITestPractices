@@ -5,7 +5,7 @@ import io.restassured.specification.RequestSpecification;
 import org.junit.Before;
 
 public class JsonPlaceHolderBaseUrl {
-    public RequestSpecification specJson;
+    protected RequestSpecification specJson;
 
     @Before
     public void setUp(){
@@ -13,7 +13,4 @@ public class JsonPlaceHolderBaseUrl {
         specJson = new RequestSpecBuilder().setBaseUri("https://jsonplaceholder.typicode.com").build();
 
     }
-
-
-
 }
