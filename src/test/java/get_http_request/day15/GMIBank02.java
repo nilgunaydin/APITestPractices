@@ -8,20 +8,26 @@ import org.junit.Test;
 import utilities.WriteToText;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertTrue;
 import static utilities.Authentication.generateToken;
+import static utilities.ReadText.readCustomerEmailList;
 
 public class GMIBank02 extends GMIBankBaseUrl {
      /*
 http://www.gmibank.com/api/tp-customers end point'ine get
 request gönderin
- 1) Tüm Customer bilgilerini ekrana yazdırırn.
 
- 2) Tüm Customer emaillerini ekrana yazdırın.
+ 1) Tüm Customer emaillerini ekrana yazdırın.
 
- 3) Tüm Customer emaillerini text dosyası olarak kaydedin
+ 2) Tüm Customer emaillerini text dosyası olarak kaydedin
 
+ 3) dönen reponse'ta winonaabernathy@gmail.com, MerrillPrice@gmail.com, LesleyKing@gmail.com
+        E-maillerinin olduğunu doğrulayın
  */
 
     @Test
@@ -43,5 +49,13 @@ request gönderin
         }
         String fileName= "src/test/java/get_http_request/day15/GMIBankTextData/EmailList.txt";
         WriteToText.saveEmailData(fileName,customers);
+
+        // 3) dönen reponse'ta winonaabernathy@gmail.com, MerrillPrice@gmail.com, LesleyKing@gmail.com
+        //        E-maillerinin olduğunu doğrulayın
+
+        List<String> expected = new ArrayList<String>(Arrays.asList("winonaabernathy@gmail.com",
+                "MerrillPrice@gmail.com", "LesleyKing@gmail.com"));
+        List<String> actual = readCustomerEmailList(fileName);
+    assertTrue(actual.containsAll(expected));
     }
 }
