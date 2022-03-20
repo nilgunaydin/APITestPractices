@@ -1,5 +1,6 @@
 package apiPractice.Niluferhoca;
 
+import base_url.JsonPlaceHolderBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
@@ -7,7 +8,7 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
-public class C06 {
+public class C06 extends JsonPlaceHolderBaseUrl {
     //https://jsonplaceholder.typicode.com/todos/123 url'ine
     //accept type'i "application/json" olan GET request'i yolladigimda
     //gelen response’un
@@ -22,9 +23,11 @@ public class C06 {
 
     @Test
     public void testC05(){
-        String url="https://jsonplaceholder.typicode.com/todos/123";
-        Response rs = given().accept(ContentType.JSON).when().get(url);
+       // String url="https://jsonplaceholder.typicode.com/todos/123";
+        specJson.pathParams("1","todos","2",123);
 
-        rs.then().assertThat().body("data.id", hasSize(24),"data.employee_name",
-                hasItem("Ashton Cox"),"data.employee_age",hasItems(21,23,61));
+        Response rs = given().spec(specJson).accept(ContentType.JSON).when().get("/{1}/{2}");
+
+        rs.then().assertThat().body("id", equalTo(123),"title",
+                equalTo("esse et quis iste est earum aut impedit"),"userId",equalTo(7),"completed",equalTo(false));
     }}
