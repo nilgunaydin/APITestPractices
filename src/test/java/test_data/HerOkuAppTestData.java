@@ -21,18 +21,17 @@ https://restful-booker.herokuapp.com/booking/47
     public HashMap<String, Object> setUpTestData(){
 
         HashMap<String, Object> bookingdates = new HashMap<>();
-        bookingdates.put("checkin", "2022-02-01");
-        bookingdates.put("checkout","2022-02-11");
+        bookingdates.put("checkin", "2017-12-17");
+        bookingdates.put("checkout","2021-04-22");
 
         HashMap<String , Object> expectedData = new HashMap<>();
-
-        expectedData.put("lastname", "Can");
-
+        expectedData.put("firstname", "Susan");
+        expectedData.put("lastname", "Jackson");
+        expectedData.put("totalprice", 718);
         expectedData.put("depositpaid", true);
         expectedData.put("bookingdates", bookingdates);
+        expectedData.put("additionalneeds", "Breakfast");
 
-        expectedData.put("firstname", "Ali");
-        expectedData.put("totalprice", 500);
         return expectedData;
     }
     // https://restful-booker.herokuapp.com/booking

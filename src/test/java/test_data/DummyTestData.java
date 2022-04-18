@@ -28,6 +28,23 @@ Sondan 3. çalışanın maaşının 675000 olduğunu
   olduğunu test edin.
 */
 
+    //En yüksek maaşın 725000 olduğunu,
+    //En küçük yaşın 19 olduğunu,
+    //İkinci en yüksek maaşın 675000
+    //olduğunu test edin.
+
+    public HashMap<String,Object> setupTestData2(){
+        HashMap<String,Object> expected = new HashMap();
+        expected.put("enYuksekMaas", 725000 );
+        expected.put("statusCode", 200 );
+        expected.put("enKucukYas",19);
+        expected.put("2.yuksekMaas",675000);
+
+        return expected;
+    }
+
+
+
     public HashMap<String,Object> setupTestData(){
 
         List<Integer> employee_age_list = new ArrayList<>();
@@ -35,20 +52,20 @@ Sondan 3. çalışanın maaşının 675000 olduğunu
         employee_age_list.add(21);
         employee_age_list.add(19);
 
-        HashMap<String,Object> onuncu = new HashMap();
-        onuncu.put("id", 10);
-        onuncu.put("employee_name", "Sonya Frost");
-        onuncu.put("employee_salary", 103600);
-        onuncu.put("employee_age", 23);
-        onuncu.put("profile_image", "");
+        HashMap<String,Object> onBirinci = new HashMap();
+        onBirinci.put("id", 11);
+        onBirinci.put("employee_name", "Jena Gaines");
+        onBirinci.put("employee_salary", 90560);
+        onBirinci.put("employee_age", 30);
+        onBirinci.put("profile_image", "");
 
         HashMap<String,Object> expected = new HashMap();
-        expected.put("14.calisan","Haley Kennedy");
+        expected.put("5.calisan","Airi Satou");
         expected.put("statusCode",200);
         expected.put("calisanSayisi",24);
-        expected.put("sondan3.CalisaninMaasi", 675000 );
+        expected.put("sondan2.CalisaninMaasi", 106450 );
         expected.put("arananYaslar",employee_age_list);
-        expected.put("onuncu",onuncu);
+        expected.put("onBirinci",onBirinci);
 
     return expected;}
 
