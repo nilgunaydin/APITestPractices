@@ -62,9 +62,13 @@ return expectedRequest;}
         expectedRequest.put("id", 198);
         return expectedRequest;}
 
-//"userId": 10,
-//"title": "Batch44"
-//"completed": true,
-//"id": 198
+  public static JSONObject NuluExpected(){
+        JSONObject json = new JSONObject();
+        json.put("userId",55);
+        json.put("title","Tidy your room");
+        json.put("completed",false);
+
+        return json;
+  }
 
 }
