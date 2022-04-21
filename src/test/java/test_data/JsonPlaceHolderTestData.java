@@ -61,7 +61,20 @@ return expectedRequest;}
         expectedRequest.put("completed", true);
         expectedRequest.put("id", 198);
         return expectedRequest;}
-
+//https://jsonplaceholder.typicode.com/todos/198 URL ine aşağıdaki body gönderdiğimde
+//{
+//
+//"title": "API calismaliyim"
+//
+//}
+//Dönen response un status kodunun 200 ve body kısmının aşağıdaki gibi olduğunu test
+//edin
+//{
+//"userId": 10,
+//"title": "API calismaliyim"
+//"completed": true,
+//"id": 198
+//}
   public static JSONObject NuluExpected(){
         JSONObject json = new JSONObject();
         json.put("userId",55);
@@ -70,5 +83,21 @@ return expectedRequest;}
 
         return json;
   }
+
+    public static JSONObject requestData(){
+        JSONObject json = new JSONObject();
+        json.put("title","API calismaliyim");
+        return json;
+    }
+
+    public static JSONObject expectedData(){
+        JSONObject json = new JSONObject();
+        json.put("userId",10);
+        json.put("title","API calismaliyim");
+        json.put("completed",true);
+        json.put("id",198);
+
+        return json;
+    }
 
 }
