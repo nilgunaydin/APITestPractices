@@ -4,7 +4,6 @@ import apiPractice.Niluferhoca.pojos.C23Pojo;
 import apiPractice.Niluferhoca.pojos.DataPojo;
 import base_url.DummyBaseUrl;
 import io.restassured.response.Response;
-import org.junit.Assert;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
