@@ -4,6 +4,7 @@ import apiPractice.Niluferhoca.pojos.C23Pojo;
 import apiPractice.Niluferhoca.pojos.DataPojo;
 import base_url.DummyBaseUrl;
 import io.restassured.response.Response;
+import org.junit.Assert;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
@@ -30,9 +31,17 @@ public class C23 extends DummyBaseUrl {
         DataPojo data = new DataPojo(1,"Tiger Nixon",320800,61,"");
         C23Pojo expected = new C23Pojo("success",data,"Successfully! Record has been fetched.");
         Response rs = given().spec(spec02).when().get("/{1}/{2}/{3}/{4}");
+        rs.prettyPrint();
         C23Pojo actual = rs.as(C23Pojo.class);
-      
-
+      assertEquals(expected.getStatus(),actual.getStatus());
+      assertEquals(expected.getData().getEmployee_name(),actual.getData().getEmployee_name());
+      assertEquals(expected.getData().getEmployee_salary(),actual.getData().getEmployee_salary());
+      assertEquals(expected.getData().getEmployee_age(),actual.getData().getEmployee_age());
+      assertEquals(expected.getMessage(),actual.getMessage());
+        /**
+         *  authentication kimlik belirtme  -> devler yapar bizlik bisey degil
+         *          autherization kimlik dogrulama -> burada yaptigimiz
+         */
 
     }
 }
